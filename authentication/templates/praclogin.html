@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">   
+    <link rel="stylesheet" href="C:\Users\DELL\Desktop\ownprac\blog\static\blog\main.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row height justify-content-center">
+            <div class="col-10">
+
+
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="card px-1">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" class="card-img-top" alt="...">
+                    <h5 class="text-muted pl-3 pt-2 text-center">Login.</h5>
+                    <div class="card-body">
+                        <button class="btn btn-sm btn-block btn-primary">Login with Facebook</button>
+                      
+                        <div class="row">
+                            <div class="col-5">
+                                <hr>
+                            </div>
+                            <div class="col-2 text-center">
+                                OR
+                            </div>
+                            <div class="col-5">
+                                <hr>
+                            </div>
+                        </div>
+
+
+                        {% include 'partials/flash_messaging.html' %}
+                        
+                    <form action="{% url 'loginuser' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group mt-2">
+                            <input class="form-control" type="text" name="username" placeholder="Username" value="">
+                        </div>
+
+                        <div class="form-group mt-2">
+                            <input class="form-control" name="password" type="password" placeholder="Password" value="">
+                        </div>
+
+                        <input class="btn btn-sm btn-block btn-primary" type="submit" value="Login">
+
+                    </form>
+
+                    <small class="text-muted small text-center">By Login, you agree to our Terms, Data Policy and Cookies Policy.</small>
+                        
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-2">
+        <div class="row justify-content-center">
+            <div class="col-6">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="text-center">New User?<a style="text-decoration: none;" href="{% url 'signupuser' %}">Signup!</a></h5>
+                    </div>
+                  </div>
+
+            </div>
+        </div>
+    </div>    
+    
+
+                
+</div>
+</div>
+</div>
+
+</body>
+</html>
